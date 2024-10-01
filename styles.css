@@ -32,7 +32,7 @@ body{
 
 .header p {
     margin: 3vh 0;
-    font-size: clamp(10px, calc(3.5vh + 10px), 100px);
+    font-size: clamp(10px, calc(2.5vh + 10px), 100px);
     text-align: center;
     line-height: 1.5;
     max-width: 75vw;
@@ -51,12 +51,12 @@ form{
 }
 
 form input{
-    margin: 1vh;
+    margin: 1.5vh 1vh;
     line-height: 2;
     font-size: clamp(10px, calc(1.5vh + 10px), 100px);
     padding: 0 1.5vw;
     border-radius: 16px;
-    border: none;
+    border: max(0.2vh, 0.2vw) solid;
     font-family: Freshwost;
 }
 

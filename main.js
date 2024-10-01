@@ -16,18 +16,20 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
     if (mail === "" || name === "") {
         window.alert("Nhập đầy đủ đi nha.");
     } else {
-        document.getElementById('emailForm').addEventListener('submit', async (event) => {
-            event.preventDefault(); // Ngăn chặn reload trang
+        window.alert("ab")
+
+        // document.getElementById('emailForm').addEventListener('submit', async (event) => {
+        //     event.preventDefault(); // Ngăn chặn reload trang
     
-            const response = await fetch('https://send-mail-gold.vercel.app', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
+        //     const response = await fetch('https://send-mail-gold.vercel.app', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //     });
     
-            const data = await response.json();
-            alert(data.message); // Hiển thị thông báo từ server
-        });
+        //     const data = await response.json();
+        //     alert(data.message); // Hiển thị thông báo từ server
+        // });
     }
 });
