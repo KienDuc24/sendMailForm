@@ -19,7 +19,7 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
         document.getElementById('emailForm').addEventListener('submit', async (event) => {
             event.preventDefault(); // Ngăn chặn reload trang
     
-            const response = await fetch('/api/run', {
+            const response = await fetch('https://send-mail-gold.vercel.app', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
