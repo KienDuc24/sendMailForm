@@ -20,7 +20,7 @@ function validateName() {
 }
 
 function validateEmail() {
-    var email = document.getElementById('email'); // Đảm bảo lấy đúng ID
+    var email = document.getElementById('email');
     var emailError = document.getElementById('emailerror');
     let emailIsValid = true;
 
@@ -47,38 +47,37 @@ document.getElementById('name').addEventListener('input', function() {
     var name = document.getElementById('name');
     var lbName = document.getElementById('lbName');
 
-    if (nameError.style.display === "block"){
-        name.style.borderColor ="red";
-        name.style.backgroundColor="rgb(243, 195, 195)";
-        lbName.style.color="rgb(151, 14, 14)";
+    if (nameError.style.display === "block") {
+        name.style.borderColor = "red";
+        name.style.backgroundColor = "rgb(243, 195, 195)";
+        lbName.style.color = "rgb(151, 14, 14)";
         lbName.style.textShadow = "none";
     } else {
-        name.style.borderColor ="black";
-        name.style.backgroundColor="white";
-        lbName.style.color="black";
+        name.style.borderColor = "black";
+        name.style.backgroundColor = "white";
+        lbName.style.color = "black";
         lbName.style.textShadow = "1px 1px 5px rgba(223, 126, 47, 0.911)";
     }
 });
 
-document.getElementById('email').addEventListener('input', function() { // Đảm bảo lấy đúng ID
+document.getElementById('email').addEventListener('input', function() {
     validateEmail();
     var emailError = document.getElementById('emailerror');
     var email = document.getElementById('email');
     var lbEmail = document.getElementById('lbEmail');
 
-    if (emailError.style.display === "block"){
-        email.style.borderColor ="red";
-        email.style.backgroundColor="rgb(243, 195, 195)";
-        lbEmail.style.color="rgb(151, 14, 14)";
+    if (emailError.style.display === "block") {
+        email.style.borderColor = "red";
+        email.style.backgroundColor = "rgb(243, 195, 195)";
+        lbEmail.style.color = "rgb(151, 14, 14)";
         lbEmail.style.textShadow = "none";
     } else {
-        email.style.borderColor ="black";
-        email.style.backgroundColor="white";
-        lbEmail.style.color="black";
+        email.style.borderColor = "black";
+        email.style.backgroundColor = "white";
+        lbEmail.style.color = "black";
         lbEmail.style.textShadow = "1px 1px 5px rgba(223, 126, 47, 0.911)";
     }
 });
-
 
 // Kiểm tra tính hợp lệ khi gửi form
 document.getElementById('emailForm').addEventListener('submit', async function(event) {
@@ -92,7 +91,8 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         const name = document.getElementById('name').value;
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbwvZeSGp7xvcJF5-4qNb3y28-VCMlT2Wxl8BWPIET1a0ANA6pE8i-pPJM0qjyz59wJcKw/exec?email=buiduckien24@gmail.com&name=Kiên' + encodeURIComponent(email) + '&name=' + encodeURIComponent(name));
+            // Sửa lại URL với tham số được mã hóa đúng cách
+            const response = await fetch(`https://script.google.com/macros/s/AKfycbwvZeSGp7xvcJF5-4qNb3y28-VCMlT2Wxl8BWPIET1a0ANA6pE8i-pPJM0qjyz59wJcKw/exec?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`);
 
             // Kiểm tra nếu phản hồi không thành công
             if (!response.ok) {
