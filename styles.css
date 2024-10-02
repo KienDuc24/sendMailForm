@@ -33,11 +33,13 @@ body{
 
 .header p {
     margin: 3vh 0;
-    font-size: clamp(10px, calc(2.5vh + 10px), 100px);
+    font-size: clamp(10px, calc(2.7vh + 10px), 100px);
     text-align: center;
     line-height: 1.5;
     max-width: 75vw;
     font-family: Freshwost;
+    font-weight: bold;
+    text-shadow: 1px 1px 0.1vw purple;
 }
 
 .header img{
@@ -137,3 +139,19 @@ form input{
     font-weight: lighter;
     font-family: Cookii;
 }
+
+	
+.error{
+  color: rgb(214, 5, 5);
+  font-size: large;
+  font-weight: 700;
+  background-color: transparent;
+
+}
+
+p.error{
+  padding: 5px 10px;
+  margin: 0px 0px 0px 8px;
+  display: none;
+}
+
