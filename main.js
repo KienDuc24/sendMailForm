@@ -92,7 +92,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         const name = document.getElementById('name').value;
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbwvZeSGp7xvcJF5-4qNb3y28-VCMlT2Wxl8BWPIET1a0ANA6pE8i-pPJM0qjyz59wJcKw/exec' + encodeURIComponent(email) + '&name=' + encodeURIComponent(name));
+            const response = await fetch('https://script.google.com/macros/s/AKfycbwvZeSGp7xvcJF5-4qNb3y28-VCMlT2Wxl8BWPIET1a0ANA6pE8i-pPJM0qjyz59wJcKw/exec?email=buiduckien24@gmail.com&name=Kiên' + encodeURIComponent(email) + '&name=' + encodeURIComponent(name));
 
             // Kiểm tra nếu phản hồi không thành công
             if (!response.ok) {
