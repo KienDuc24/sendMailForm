@@ -92,7 +92,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
 
         try {
             // Sửa lại URL với tham số được mã hóa đúng cách
-            const response = await fetch(`https://script.google.com/macros/s/AKfycbwvZeSGp7xvcJF5-4qNb3y28-VCMlT2Wxl8BWPIET1a0ANA6pE8i-pPJM0qjyz59wJcKw/exec?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`);
+            const response = await fetch(`h}`);
 
             // Kiểm tra nếu phản hồi không thành công
             if (!response.ok) {
