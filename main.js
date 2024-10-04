@@ -102,6 +102,8 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         })
         .then(response => response.text())
         .then(data => {
+            const done_audio = document.getElementById("done");
+            done_audio.play();
             console.log(data); // Xử lý phản hồi từ Apps Script nếu cần
             alert('Dữ liệu đã được gửi thành công!');
         })
@@ -113,23 +115,22 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
     }
 });
 
-window.addEventListener('load', function() {
-    const audio = document.getElementById('backgroundMusic');
-    audio.volume = 0.3; // Giảm âm lượng xuống 30%
-    audio.play().catch(error => {
-        console.log('Không thể phát nhạc:', error);
-    });
 
-    const inputs = document.querySelectorAll('input');
+const bg_audio = document.getElementById('backgroundMusic');
+bg_audio.volume = 0.3;
+bg_audio.play().catch(error => {
+    console.log('Không thể phát nhạc:', error);
+});
+const inputs = document.querySelectorAll('input');
     inputs.forEach(input => {
         input.addEventListener('focus', () => {
-            audio.pause(); // Dừng nhạc
+            bg_audio.play().catch(error => {
+                console.log('Không thể phát nhạc:', error);
+            });
+            
         });
 
         input.addEventListener('blur', () => {
-            audio.play().catch(error => {
-                console.log('Không thể phát nhạc:', error);
-            }); // Phát lại nhạc khi người dùng rời khỏi ô input
+           bg_audio.pause();
         });
     });
-});
