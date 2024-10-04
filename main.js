@@ -90,22 +90,46 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         const email = document.getElementById('email').value;
         const name = document.getElementById('name').value;
 
-        try {
-            // Sửa lại URL với tham số được mã hóa đúng cách
-            const response = await fetch(`h}`);
-
-            // Kiểm tra nếu phản hồi không thành công
-            if (!response.ok) {
-                throw new Error('Network response was not ok: ' + response.statusText);
-            }
-
-            const result = await response.text();
-            alert(result); // Hiển thị phản hồi
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Có lỗi xảy ra khi gửi dữ liệu: " + error.message);
-        }
+        fetch('https://script.google.com/macros/s/AKfycbzgnvQfv1HB40xs-yIRMy625fcSqhyAB_-wcT-_fy4HTMjEtVor3-GxG8fVraDqSxcd/exec', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                name: name,
+                mail: email
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Xử lý phản hồi từ Apps Script nếu cần
+            alert('Dữ liệu đã được gửi thành công!');
+        })
+        .catch(error => {
+            console.error('Lỗi:', error);
+        });
 
         event.preventDefault(); // Ngăn chặn gửi form nếu cần
     }
+});
+
+window.addEventListener('load', function() {
+    const audio = document.getElementById('backgroundMusic');
+    audio.volume = 0.3; // Giảm âm lượng xuống 30%
+    audio.play().catch(error => {
+        console.log('Không thể phát nhạc:', error);
+    });
+
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            audio.pause(); // Dừng nhạc
+        });
+
+        input.addEventListener('blur', () => {
+            audio.play().catch(error => {
+                console.log('Không thể phát nhạc:', error);
+            }); // Phát lại nhạc khi người dùng rời khỏi ô input
+        });
+    });
 });
