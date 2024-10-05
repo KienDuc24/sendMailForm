@@ -90,7 +90,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         const email = document.getElementById('email').value;
         const name = document.getElementById('name').value;
 
-        fetch('https://script.google.com/macros/s/AKfycbzgnvQfv1HB40xs-yIRMy625fcSqhyAB_-wcT-_fy4HTMjEtVor3-GxG8fVraDqSxcd/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbws1keh9hr4pNDE_WN3ZNFKE427Eo5RQiq-QzQd9JUhHS9Y81DqQNQsbe_9W13dJ0vA/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
