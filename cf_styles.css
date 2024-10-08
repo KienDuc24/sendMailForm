@@ -1,0 +1,230 @@
+@font-face {
+    font-family: Cookii;
+    src: url('./font/Cookii-Display.otf');
+}
+@font-face {
+    font-family: Bones;
+    src: url('./font/DFVN\ Them\ Bones\ Regular.otf');
+}
+@font-face {
+    font-family: Seventies;
+    src: url('./font/VN-Seventies-Regular.ttf');
+}
+@font-face {
+  font-family: Penny;
+  src: url('./font/1FTV-HennyPenny-Regular.ttf');
+}
+@font-face {
+  font-family: Harry;
+  src: url('./font/SVN-DHF\ Harry\'s\ Brush.otf');
+}
+
+:root {
+  --cursor:  url('data:image/png;base64,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'), auto;
+}
+
+*{
+  cursor: var(--cursor);
+}
+
+button:hover{
+  cursor: var(--cursor);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: black;
+  background-image: url('./img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.header{
+  display: flex; 
+  align-items: center;     
+  margin-top: 3vh;
+  justify-content: center; 
+  flex-direction: column;
+}
+
+.header p {
+  margin: 3vh 0;
+  font-size: clamp(10px, calc(3.5vh + 10px), 100px);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 75vw;
+  font-family: Bones;
+  text-shadow: 1px 1px 10px rgba(223, 126, 47, 0.911);
+}
+
+.header img{
+  width: max(20vh, 10vw);
+  height: 100%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: max(40vw, 45vh);
+  margin: auto;
+}
+
+form input{
+  margin: 1.5vh 1vh;
+  line-height: 2;
+  font-size: clamp(10px, calc(1.5vh + 10px), 100px);
+  padding: 0 1.5vw;
+  border-radius: 100vw;
+  border: max(0.2vh, 0.2vw) solid black;
+  font-family: Freshwost;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 32px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+  
+  .button-85:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 32px;
+  }
+  
+  @keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #925505;
+    left: 0;
+    top: 0;
+    border-radius: 32px;
+  }
+
+form button{
+  padding: 2vh 2vw;
+  margin: auto;
+  border: none;
+  margin: 3vh auto;
+  font-size: clamp(10px, calc(2vh + 10px), 100px);
+  font-weight: lighter;
+  font-family: Harry;
+  letter-spacing: max( 0.3vw, 0.3vh);
+}
+
+	
+.error{
+  color: rgb(214, 5, 5);
+  font-size: large;
+  font-weight: 700;
+  background-color: transparent;
+}
+
+p.error{
+  margin: 0px 0px 0px 1vw;
+  display: none;
+  font-size: clamp(10px, calc(1vh + 10px), 100px);
+}
+
+input:focus, input:hover, input:focus:hover{
+  outline: none;
+}
+
+
+.input-container {
+  position: relative; /* Để định vị label */
+  margin-bottom: 1em; /* Khoảng cách giữa các input */
+}
+
+input {
+  box-sizing: border-box; /* Quan trọng cho kích thước chính xác */
+  width: 100%; /* Chiều rộng 100% */
+  height: 3em; /* Chiều cao của ô input */
+  padding: 1em; /* Khoảng cách bên trong */
+  border: 1px solid #ccc; /* Viền */
+  border-radius: 0.5em; /* Bo góc */
+  background: #fff; /* Màu nền */
+  outline: none; /* Không viền khi focus */
+  transition: border-color 0.2s; /* Hiệu ứng chuyển màu viền */
+}
+
+/* Định dạng cho label */
+label {
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  left: 1em; /* Khoảng cách từ trái */
+  top: 50%; /* Căn giữa theo trục y */
+  transform: translateY(-50%); /* Điều chỉnh để căn giữa chính xác */
+  font-size: clamp(10px, calc(1.5vh + 10px), 100px);
+  color: black;
+  transition: 0.2s ease; /* Hiệu ứng chuyển tiếp */
+  pointer-events: none; /* Không cho phép tương tác với label */
+  font-family: Penny;
+}
+
+/* Hiệu ứng cho label khi input được focus hoặc có giá trị */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: 15%; /* Di chuyển lên trên */
+  left: 2rem; /* Đặt lại khoảng cách từ trái */
+  font-size: clamp(10px, calc(1.3vh + 10px), 100px); /* Giảm kích thước chữ */
+  font-weight: bolder;
+  color: black;
+  display: inline-block;
+  white-space: nowrap;
+  transition: 0.3s ease-in-out;
+  background-image: linear-gradient(to bottom, #fff, #fff); /* Nền trắng */
+  background-size: 100% 7px; /* Kích thước nền */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 1vw;
+  text-shadow: 1px 1px 5px rgba(223, 126, 47, 0.911);
+}

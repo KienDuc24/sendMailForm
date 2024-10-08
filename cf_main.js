@@ -107,7 +107,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
             console.log(data); // Xử lý phản hồi từ Apps Script nếu cần
             alert('Dữ liệu đã được gửi thành công!');
         })
-        .catch(error => {
+        .catch(error => { 
             console.error('Lỗi:', error);
         });
 
@@ -115,22 +115,10 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
     }
 });
 
-
-const bg_audio = document.getElementById('backgroundMusic');
-bg_audio.volume = 0.3;
-bg_audio.play().catch(error => {
-    console.log('Không thể phát nhạc:', error);
-});
-const inputs = document.querySelectorAll('input');
-    inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            bg_audio.play().catch(error => {
-                console.log('Không thể phát nhạc:', error);
-            });
-            
-        });
-
-        input.addEventListener('blur', () => {
-           bg_audio.pause();
-        });
+window.addEventListener('load', function() {
+    const bg_audio = document.getElementById('backgroundMusic');
+    bg_audio.volume = 0.1;
+    bg_audio.play().catch(error => {
+        console.log('Không thể phát nhạc:', error);
     });
+});
