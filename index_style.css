@@ -41,7 +41,6 @@
       background-image: url('./img/bg.jpg');
       background-repeat: no-repeat;
       background-size:cover;
-      width: 100vw;
       height: 100vh;
   }
 
@@ -62,11 +61,6 @@
 }
 
 .container{
-    position: absolute; /* Đặt vị trí tuyệt đối */
-    top: 50%; /* Căn giữa theo trục y */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Điều chỉnh để căn giữa chính xác */
-    margin: auto;
     display: flex;
     background-color: rgb(226, 200, 166);
     flex-direction: column;
@@ -109,6 +103,117 @@ li::before {
     transform: translateY(-50%); /* Căn giữa theo chiều dọc */
 }
 
+li p:nth-child(2){
+    text-align: center;
+}
+
+a {
+    margin: auto;
+    color: inherit; /* Kế thừa màu sắc từ phần tử cha */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi di chuột qua */
+}
+
+a:visited {
+    color: inherit; /* Giữ màu giống khi đã thăm */
+}
+
+a:active {
+    color: inherit; /* Giữ màu giống khi nhấn */
+}
+
+.rooms{
+    display: flex;
+    flex-direction: column;
+}
+
+.room{
+    margin-top: 1vh;
+    border: 3px solid black;
+    padding: min(1vw,1vh);
+}
+
+h1{
+    font-size: clamp(10px, calc(3vh + 5px), 100px);
+    margin-bottom: 1vh;
+    text-align: center;
+}
+
+.room_infor{
+    display: flex;
+    flex-direction: row;
+}
+
+.room_infor img{
+    width: 50%;
+    height: 100%;
+    margin-right: 1vw;
+}
+
+.content{
+    text-align: center;
+    margin: auto;
+}
+
+.colum{
+    display: flex;
+    margin-bottom: min(2vh,2vw);
+}
+
+.colum img{
+    width: clamp(10px, calc(5vh + 5px), 100px);
+    height: 100%;
+}
+
+
+.colum p{
+    margin: auto;
+    font-size: clamp(10px, calc(1.75vh + 5px), 100px);
+}
+
+/* REPONSIVE */
+
+@media only screen and (min-width: 1025px) {
+}
+
+@media only screen and (max-width:1024px) and (min-width: 641px) {
+}
+
+@media only screen and (max-width: 800px) {
+  .repons{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .repons >img{
+    width: 95%;
+    margin: auto;
+  }
+
+  .room{
+    margin-top: 2vh;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .repons{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .repons >img{
+    width: 95%;
+    margin: auto;
+  }
+
+  .room{
+    margin-top: 2vh;
+  }
+}
+
 button{
     padding: 2vh 2vw;
     margin: auto;
@@ -117,9 +222,5 @@ button{
     font-size: clamp(10px, calc(2vh + 10px), 100px);
     font-family: Harry;
     letter-spacing: max( 0.3vw, 0.3vh);
+    box-shadow: 3px 3px rgb(117, 77, 3);
 }
-
-a{
-    margin: auto;
-}
-
